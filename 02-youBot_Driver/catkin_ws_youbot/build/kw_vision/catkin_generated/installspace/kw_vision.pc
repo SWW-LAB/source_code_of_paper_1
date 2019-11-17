@@ -1,0 +1,8 @@
+prefix=/home/chao/catkin_ws_youbot/install
+
+Name: kw_vision
+Description: Description of kw_vision
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/chao/catkin_ws_youbot/install/lib 
+Requires: 

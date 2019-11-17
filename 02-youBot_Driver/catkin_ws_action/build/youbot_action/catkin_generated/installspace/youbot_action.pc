@@ -1,0 +1,8 @@
+prefix=/home/chao/catkin_ws_action/install
+
+Name: youbot_action
+Description: Description of youbot_action
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/chao/catkin_ws_action/install/lib 
+Requires: actionlib actionlib_msgs roscpp rospy std_msgs moveit_core moveit_ros_planning_interface interactive_markers control_msgs

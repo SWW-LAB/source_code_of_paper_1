@@ -1,0 +1,9 @@
+<launch>
+    
+    <node name="execute_server" pkg="gripper_controller" type="execute_server"/>
+
+    <node name="transform_server" pkg="gripper_controller" type="transform_server"/>
+	
+    <node name="speed_controller" pkg="gripper_controller" type="speed_controller"/>
+
+</launch>

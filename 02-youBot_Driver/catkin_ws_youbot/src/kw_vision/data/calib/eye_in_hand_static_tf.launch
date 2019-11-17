@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="tf" type="static_transform_publisher" name="realsense_f200_link_broadcaster" args="-0.0747972 0.0261618 0.015123 0.000521509 -0.748805 -0.0121334 0.662679 arm_link_5 realsense_f200_link 40" />
+</launch>

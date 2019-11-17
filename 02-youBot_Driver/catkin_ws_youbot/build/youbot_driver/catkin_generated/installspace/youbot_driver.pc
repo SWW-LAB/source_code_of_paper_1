@@ -1,0 +1,8 @@
+prefix=/home/chao/catkin_ws_youbot/install
+
+Name: youbot_driver
+Description: Description of youbot_driver
+Version: 1.1.0
+Cflags: -I/home/chao/catkin_ws_youbot/install/include -I/usr/include
+Libs: -L/home/chao/catkin_ws_youbot/install/lib -lYouBotDriver -lsoem -lrt -l:/usr/lib/x86_64-linux-gnu/libboost_thread.so -l:/usr/lib/x86_64-linux-gnu/libboost_date_time.so -l:/usr/lib/x86_64-linux-gnu/libboost_filesystem.so -l:/usr/lib/x86_64-linux-gnu/libboost_system.so -l:/usr/lib/x86_64-linux-gnu/libboost_regex.so -l:/usr/lib/x86_64-linux-gnu/libpthread.so
+Requires: roscpp rosconsole

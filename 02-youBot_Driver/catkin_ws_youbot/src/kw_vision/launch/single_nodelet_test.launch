@@ -1,0 +1,28 @@
+<launch>
+    <!-- Start nodelet manager in top-level namespace -->
+    <arg name="module" default="kw_vision" />
+    <arg name="camera" default="realsense_f200" />
+    <arg name="manager" value="$(arg module)_nodelet_manager" />
+    <arg name="debug" default="false" /> <!-- Run manager in GDB? -->
+    <arg if="$(arg debug)" name="launch_prefix" value="xterm -e gdb --args" />
+    <arg unless="$(arg debug)" name="launch_prefix" value="" />
+    <arg name="respawn" default="false" />
+    <arg     if="$(arg respawn)" name="bond" value="" />
+    <arg unless="$(arg respawn)" name="bond" value="--no-bond" />
+    <arg name="num_worker_threads" default="8" />
+
+    <group ns="$(arg module)" >
+        <include file="$(find kw_vision)/launch/include/manager.launch.xml">
+            <arg name="name"                value="$(arg manager)" />
+            <arg name="debug"               value="$(arg debug)" />
+            <arg name="num_worker_threads"  value="$(arg num_worker_threads)" />
+        </include>
+        <!-- Remove outlier points in the scene. Write here test useness. -->
+        <node pkg="nodelet" type="nodelet" name="pc_global_recognizer" args="load kw_vision/PointCloudGlobalRecognizerNodelet $(arg manager) $(arg bond)" respawn="$(arg respawn)" launch-prefix="$(arg launch_prefix)">
+            <remap from="~input" to="/$(arg camera)/depth_registered/points" />
+            <remap from="~result" to="result" />
+            <param name="training_input_dir" value="$(find kw_vision)/data/training_input" />
+            <param name="trained_data_dir" value="$(find kw_vision)/data/trained_data" />
+        </node>
+    </group>
+</launch>

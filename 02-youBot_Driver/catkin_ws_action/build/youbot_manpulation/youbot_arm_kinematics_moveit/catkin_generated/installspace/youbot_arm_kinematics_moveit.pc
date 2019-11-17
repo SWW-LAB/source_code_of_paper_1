@@ -1,0 +1,8 @@
+prefix=/home/chao/catkin_ws_action/install
+
+Name: youbot_arm_kinematics_moveit
+Description: Description of youbot_arm_kinematics_moveit
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/chao/catkin_ws_action/install/lib 
+Requires: 

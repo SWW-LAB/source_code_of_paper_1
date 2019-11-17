@@ -1,0 +1,8 @@
+prefix=/home/chao/catkin_ws_action/devel
+
+Name: youbot_moveit_config
+Description: Description of youbot_moveit_config
+Version: 0.2.0
+Cflags: 
+Libs: -L/home/chao/catkin_ws_action/devel/lib 
+Requires: 

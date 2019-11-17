@@ -1,0 +1,51 @@
+function [ output_args ] = Deal_Deep_Img( input_args )
+%Deal_Deep_Img 将深度图像中的0值（没用深度值）用附近的数值代替
+%   此处显示详细说明
+    data_size = size(input_args);
+    n = 0;
+    flag = 0;
+    deep_img = [ [], [] ];
+    for i = 1:data_size(1)
+        for j = 1:data_size(2)
+            if input_args(i,j)==0
+                while flag==0
+                    n = n + 1;
+                    i_n_1 = i-n;
+                    i_n_2 = i+n;
+                    j_n_1 = j-n;
+                    j_n_2 = j+n;
+                    if i_n_1<1
+                        i_n_1 = 1;
+                    end
+                    if j_n_1<1
+                        j_n_1 = 1;
+                    end
+                    if i_n_2>data_size(1)
+                        i_n_2 = data_size(1);
+                    end
+                    if j_n_2>data_size(1)
+                        j_n_2 = data_size(1);
+                    end
+                    for i_n = i_n_1:i_n_2
+                        for j_n = j_n_1:j_n_2
+                            if input_args(i_n,j_n)~=0
+                                flag = 1;
+                                break;
+                            end
+                        end
+                        if flag == 1
+                            break;
+                        end
+                    end
+                end
+                flag = 0;
+                n = 0;
+                deep_img(i,j) = input_args(i_n,j_n);
+            else
+                deep_img(i,j) = input_args(i,j);
+            end
+        end
+    end
+	output_args = deep_img;
+end
+

@@ -1,0 +1,7 @@
+ <launch>
+    <include file="$(find youbot_moveit_config)/launch/experiment.launch">
+    </include>
+    <node name="action_client" pkg="youbot_action" type="action_client" respawn="false" output="screen">
+    </node>
+
+ </launch>

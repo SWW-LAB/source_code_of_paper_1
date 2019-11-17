@@ -1,0 +1,7 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+    
+     <include file="$(find dynamixel_tutorials)/launch/controller_manager.launch"/>
+     <include file="$(find dynamixel_tutorials)/launch/controller_spawner.launch"/>
+
+</launch>

@@ -1,0 +1,136 @@
+t<?xml version="1.0"?>
+<robot name="bulldog_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!--xacro:include filename="$(find bulldog_description)/urdf/bulldog/wheel.urdf.xacro" />
+  <xacro:include filename="$(find bulldog_description)/urdf/bulldog/materials.xacro" /-->
+  <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+  <xacro:include filename="$(find lms1xx)/urdf/sick_lms1xx.urdf.xacro" />
+  <xacro:include filename="$(find robotiq_85_description)/urdf/robotiq_85_gripper.urdf.xacro" />
+
+  <xacro:include filename="$(find sr_description)/materials.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/hand_lite.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/other/xacro/gazebo/gazebo.urdf.xacro" />
+
+  <property name="M_PI" value="3.141592654"/>
+  <xacro:property name="wheel_length" value="0.142" />
+  <xacro:property name="wheel_radius" value="0.183" />
+
+  <property name="base_x_size" value="0.85" />
+  <property name="base_y_size" value="0.42" />
+  <property name="base_z_size" value="0.325" />
+
+  <!--xacro:macro name="bulldog_robot">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bulldog_description/meshes/base_link.stl" />
+        <mesh filename="file:///home/hand/vehicle_ur_shadow_config/src/bulldog_description/meshes/base_link.stl" />
+      </geometry>
+      <material name="flat_black" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${base_z_size/2.0}" rpy="0 0 0" />
+      <geometry>
+        <box size="${base_x_size} ${base_y_size} ${base_z_size}"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base_link">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo-->
+
+  <link name="inertial_link">
+    <inertial>
+      <mass value="40" />
+      <origin xyz="0 0 0.1" />
+      <inertia ixx="0.7" ixy="-0.03" ixz="-0.15" iyy="2" iyz="-0.01" izz="4" />
+    </inertial>
+  </link>
+  <joint name="inertial_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="inertial_link" />
+  </joint>
+
+  <link name="top_plate_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <!--mesh filename="package://bulldog_description/meshes/top_plate.stl" /-->
+        <mesh filename="file:///home/hand/vehicle_ur_shadow_config/src/bulldog_description/meshes/top_plate.stl" />
+      </geometry>
+      <material name="grey" />
+    </visual>
+  </link>
+  <gazebo reference="top_plate_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <joint name="top_plate_joint" type="fixed">
+    <origin xyz="0.07937 0 0.253" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="top_plate_link" />
+  </joint>
+
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+  </joint>
+  <gazebo reference="imu_link" />
+
+  <xacro:bulldog_wheel wheel_prefix="front_left">
+    <origin xyz="0.27937 0.285 0.0435" rpy="0 0 0" />
+  </xacro:bulldog_wheel>
+  <xacro:bulldog_wheel wheel_prefix="front_right">
+    <origin xyz="0.27937 -0.285 0.0435" rpy="0 0 0" />
+  </xacro:bulldog_wheel>
+  <xacro:bulldog_wheel wheel_prefix="rear_left">
+    <origin xyz="-0.27937 0.285 0.0435" rpy="0 0 0" />
+  </xacro:bulldog_wheel>
+  <xacro:bulldog_wheel wheel_prefix="rear_right">
+    <origin xyz="-0.27937 -0.285 0.0435" rpy="0 0 0" />
+  </xacro:bulldog_wheel>
+
+  <xacro:if value="$(arg ur5_enabled)">
+    <xacro:installation_plate />
+    <xacro:ur5_robot prefix="ur5_arm_" joint_limited="true"/>
+    <joint name="ur5_arm_base" type="fixed">
+      <parent link="installation_plate_link" />
+      <child link="ur5_arm_base_link" />
+      <origin xyz="0 0 0.005" rpy="0 0 0" />
+    </joint>
+
+    <!--xacro:robotiq_85_gripper prefix="" parent="ur5_arm_ee_link" >
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+    </xacro:robotiq_85_gripper-->
+    <joint name="hand_joint" type="fixed">
+      <parent link="ur5_arm_tool0" />
+      <child link="rh_forearm" />
+      <origin xyz="0.0 0.0 0.005" rpy="0.0 0.0 ${-M_PI}" />
+    </joint>
+    <xacro:shadowhand muscletrans="false" muscle="false" bio="false" bt_sp="false"
+  ubi="false" eli="false" reflect="1.0" prefix="rh_" extra_lite="false"/>
+    <joint name="grasp_joint" type="fixed">
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <parent link="ur5_arm_tool0"/>
+      <child link="grasp_link"/>
+    </joint>
+    <link name="grasp_link"/>
+  </xacro:if>
+
+  <!--xacro:if value="$(arg laser_enabled)">
+    <xacro:installation_plate />
+    <xacro:laser_plate />
+    <sick_lms1xx frame="laser_link" topic="scan"/>
+    <joint name="laser_mount_joint" type="fixed">
+      <origin xyz="0.015 0 0.044" rpy="${M_PI} 0 0" />
+      <parent link="laser_plate_link" />
+      <child link="laser_link" />
+    </joint>
+  </xacro:if-->
+
+  </xacro:macro>
+</robot>

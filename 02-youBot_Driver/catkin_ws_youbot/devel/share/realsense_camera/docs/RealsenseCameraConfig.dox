@@ -1,0 +1,10 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~laser_power" : \b [int] Laser Power min: 1, default: 16, max: 16
+- \b "~accuracy" : \b [int] Accuracy - The projected pattern min: 1, default: 2, max: 3
+- \b "~motion_range_trade_off" : \b [int] Motion Range Trade Off - Short exposure and short range (0) to long exposure and long range (100) min: 0, default: 0, max: 100
+- \b "~filter_option" : \b [int] The smoothing aggressiveness parameter min: 0, default: 5, max: 7
+- \b "~confidence_threshold" : \b [int] The confidence threshold that is used to floor the depth map values. min: 0, default: 6, max: 15
+

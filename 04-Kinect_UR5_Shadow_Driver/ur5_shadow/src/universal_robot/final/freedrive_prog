@@ -1,0 +1,7 @@
+def driverProg():
+  while True:
+    freedrive_mode()
+    sync()
+  end
+end
+driverProg()

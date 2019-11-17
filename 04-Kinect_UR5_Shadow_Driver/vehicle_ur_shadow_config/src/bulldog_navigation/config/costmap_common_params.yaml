@@ -1,0 +1,39 @@
+max_obstacle_height: 1
+footprint: [[0.5, 0.4], [-0.5, 0.4], [-0.5, -0.4], [0.5, -0.4]] 
+
+map_type: voxel
+
+obstacle_layer:
+  enabled:              true
+  max_obstacle_height:  1
+  origin_z:             0.0
+  z_resolution:         0.2
+  z_voxels:             2
+  unknown_threshold:    15
+  mark_threshold:       0
+  combination_method:   1
+  track_unknown_space:  true    
+  obstacle_range: 30
+  raytrace_range: 30
+  origin_z: 0.0
+  z_resolution: 0.2
+  z_voxels: 2
+  publish_voxel_map: true
+  observation_sources:  scan 
+  scan:
+    data_type: LaserScan
+    topic: scan
+    marking: true
+    clearing: true
+    min_obstacle_height: 0.1
+    max_obstacle_height: 0.5
+
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  8.0  
+  inflation_radius:     0.4 
+
+static_layer:
+  enabled:              true
+  
+

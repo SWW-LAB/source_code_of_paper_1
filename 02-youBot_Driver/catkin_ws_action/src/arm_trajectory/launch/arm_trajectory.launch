@@ -1,0 +1,12 @@
+<launch>
+   <include file="$(find youbot_moveit_config)/launch/experiment.launch"/>
+
+   <node pkg="arm_trajectory" type="armjoints_trajectory_client" name="arm_trajectory_client"/>
+
+   <node pkg="arm_trajectory" type="armjoints_trajectory_server" name="arm_trajectory_server"/>
+
+   <!--node pkg="gripper_controller" type="tranform_server" name="transform_server"/-->
+
+   <!--node pkg="gripper_controller" type="execute_server" name="execute_server"/-->
+
+</launch>

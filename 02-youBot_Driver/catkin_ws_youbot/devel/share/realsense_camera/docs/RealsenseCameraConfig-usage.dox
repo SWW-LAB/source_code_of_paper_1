@@ -1,0 +1,11 @@
+\subsubsection usage Usage
+\verbatim
+<node name="realsense_camera_node" pkg="realsense_camera" type="realsense_camera_node">
+  <param name="laser_power" type="int" value="16" />
+  <param name="accuracy" type="int" value="2" />
+  <param name="motion_range_trade_off" type="int" value="0" />
+  <param name="filter_option" type="int" value="5" />
+  <param name="confidence_threshold" type="int" value="6" />
+</node>
+\endverbatim
+

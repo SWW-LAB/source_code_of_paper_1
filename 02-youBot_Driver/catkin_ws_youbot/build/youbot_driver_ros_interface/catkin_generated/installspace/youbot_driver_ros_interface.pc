@@ -1,0 +1,8 @@
+prefix=/home/chao/catkin_ws_youbot/install
+
+Name: youbot_driver_ros_interface
+Description: Description of youbot_driver_ros_interface
+Version: 1.1.1
+Cflags: 
+Libs: -L/home/chao/catkin_ws_youbot/install/lib 
+Requires: youbot_driver rosconsole roscpp pr2_msgs brics_actuator tf control_msgs diagnostic_msgs geometry_msgs nav_msgs pr2_msgs std_msgs std_srvs trajectory_msgs

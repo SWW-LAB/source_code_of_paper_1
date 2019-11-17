@@ -1,0 +1,30 @@
+[roslaunch][INFO] 2017-05-24 16:17:08,914: Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+[roslaunch][INFO] 2017-05-24 16:17:08,916: Done checking log file disk usage. Usage is <1GB.
+[roslaunch][INFO] 2017-05-24 16:17:08,917: roslaunch starting with args ['/opt/ros/indigo/bin/roslaunch', 'bulldog_driver', 'bulldog_base.launch']
+[roslaunch][INFO] 2017-05-24 16:17:08,917: roslaunch env is {'LC_NUMERIC': 'zh_CN.UTF-8', 'ROS_DISTRO': 'indigo', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'SSH_CLIENT': '192.168.1.145 36552 22', 'CPATH': '/home/bulldog/catkin_ws/devel/include:/opt/ros/indigo/include', 'LOGNAME': 'bulldog', 'USER': 'bulldog', 'HOME': '/home/bulldog', 'LC_PAPER': 'zh_CN.UTF-8', 'PATH': '/opt/ros/indigo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'CMAKE_PREFIX_PATH': '/home/bulldog/catkin_ws/devel:/opt/ros/indigo', 'LD_LIBRARY_PATH': '/home/bulldog/catkin_ws/devel/lib:/opt/ros/indigo/lib:/opt/ros/indigo/lib/x86_64-linux-gnu', 'LANG': 'en_US.UTF-8', 'TERM': 'xterm', 'SHELL': '/bin/bash', 'LC_MONETARY': 'zh_CN.UTF-8', 'QT_QPA_PLATFORMTHEME': 'appmenu-qt5', 'ROS_LOG_FILENAME': '/home/bulldog/.ros/log/616b4d2c-4059-11e7-ac0a-00e04c3609c4/roslaunch-BD17011-4077.log', 'ROS_ETC_DIR': '/opt/ros/indigo/etc/ros', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LC_ADDRESS': 'zh_CN.UTF-8', 'PYTHONPATH': '/home/bulldog/catkin_ws/devel/lib/python2.7/dist-packages:/opt/ros/indigo/lib/python2.7/dist-packages', 'ROS_IP': '192.168.1.30', 'SHLVL': '1', 'ROS_ROOT': '/opt/ros/indigo/share/ros', 'PKG_CONFIG_PATH': '/home/bulldog/catkin_ws/devel/lib/pkgconfig:/opt/ros/indigo/lib/pkgconfig:/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig', 'ROS_PACKAGE_PATH': '/home/bulldog/catkin_ws/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks', 'XDG_SESSION_ID': '1', '_': '/opt/ros/indigo/bin/roslaunch', 'LC_IDENTIFICATION': 'zh_CN.UTF-8', 'SSH_CONNECTION': '192.168.1.145 36552 192.168.1.30 22', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'SSH_TTY': '/dev/pts/3', 'ROSLISP_PACKAGE_DIRECTORIES': '/home/bulldog/catkin_ws/devel/share/common-lisp', 'LC_TELEPHONE': 'zh_CN.UTF-8', 'LC_MEASUREMENT': 'zh_CN.UTF-8', 'PWD': '/home/bulldog', 'ROS_MASTER_URI': 'http://192.168.1.30:11311', 'LC_NAME': 'zh_CN.UTF-8', 'MAIL': '/var/mail/bulldog', 'LC_TIME': 'zh_CN.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'}
+[roslaunch][INFO] 2017-05-24 16:17:08,917: starting in server mode
+[roslaunch.parent][INFO] 2017-05-24 16:17:08,917: starting roslaunch parent run
+[roslaunch][INFO] 2017-05-24 16:17:08,917: loading roscore config file /opt/ros/indigo/etc/ros/roscore.xml
+[roslaunch][INFO] 2017-05-24 16:17:09,011: Added core node of type [rosout/rosout] in namespace [/]
+[roslaunch.config][INFO] 2017-05-24 16:17:09,011: loading config file /opt/ros/indigo/share/bulldog_driver/launch/bulldog_base.launch
+[roslaunch][ERROR] 2017-05-24 16:17:09,660: Invalid <param> tag: Cannot load command parameter [robot_description]: command [/opt/ros/indigo/share/xacro/xacro.py '/home/bulldog/catkin_ws/src/bulldog/bulldog_description/urdf/bulldog_robot.xacro'] returned with code [1]. 
+
+Param xml is <param command="$(find xacro)/xacro.py '$(find bulldog_description)/urdf/bulldog_robot.xacro'" name="robot_description"/>
+[roslaunch][ERROR] 2017-05-24 16:17:09,660: The traceback for the exception was written to the log file
+[roslaunch][ERROR] 2017-05-24 16:17:09,661: Traceback (most recent call last):
+  File "/opt/ros/indigo/lib/python2.7/dist-packages/roslaunch/__init__.py", line 307, in main
+    p.start()
+  File "/opt/ros/indigo/lib/python2.7/dist-packages/roslaunch/parent.py", line 268, in start
+    self._start_infrastructure()
+  File "/opt/ros/indigo/lib/python2.7/dist-packages/roslaunch/parent.py", line 217, in _start_infrastructure
+    self._load_config()
+  File "/opt/ros/indigo/lib/python2.7/dist-packages/roslaunch/parent.py", line 132, in _load_config
+    roslaunch_strs=self.roslaunch_strs, verbose=self.verbose)
+  File "/opt/ros/indigo/lib/python2.7/dist-packages/roslaunch/config.py", line 453, in load_config_default
+    raise RLException(e)
+RLException: Invalid <param> tag: Cannot load command parameter [robot_description]: command [/opt/ros/indigo/share/xacro/xacro.py '/home/bulldog/catkin_ws/src/bulldog/bulldog_description/urdf/bulldog_robot.xacro'] returned with code [1]. 
+
+Param xml is <param command="$(find xacro)/xacro.py '$(find bulldog_description)/urdf/bulldog_robot.xacro'" name="robot_description"/>
+
+[rospy.core][INFO] 2017-05-24 16:17:09,661: signal_shutdown [atexit]

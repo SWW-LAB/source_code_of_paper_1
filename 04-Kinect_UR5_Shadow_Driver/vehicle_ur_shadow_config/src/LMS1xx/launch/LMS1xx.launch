@@ -1,0 +1,27 @@
+<launch>
+  <arg name="host" default="192.168.1.40" />
+  <node pkg="lms1xx" name="lms1xx" type="LMS1xx_node">
+    <param name="host" value="$(arg host)" />
+  </node>
+  <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter">
+    <!--remap from="scan" to="base_scan" /--> 
+    <rosparam subst_value="true">
+      scan_filter_chain:
+      - name: laser_median_filter
+        type: LaserArrayFilter
+        params: 
+          range_filter_chain:
+            - name: median_5
+              type: MultiChannelMedianFilterFloat 
+              params:
+                number_of_observations: 50
+                unused: 10
+          intensity_filter_chain:
+            - name: median_5
+              type: MultiChannelMedianFilterFloat 
+              params:
+                number_of_observations: 5
+                unused: 10
+    </rosparam>
+  </node>
+</launch>

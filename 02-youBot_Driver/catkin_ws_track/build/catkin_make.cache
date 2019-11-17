@@ -1,0 +1,2 @@
+ar_track_alvar:ar_track_alvar_msgs:usb_cam
+-DCATKIN_DEVEL_PREFIX=/home/chao/catkin_ws_track/devel -DCMAKE_INSTALL_PREFIX=/home/chao/catkin_ws_track/install -G Unix Makefiles

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <arg name="camera" value="realsense_f200" /> 
+    <arg name="rgb_camera_info_url" default="file://${ROS_HOME}/camera_info/$(arg camera)_rgb.yaml" />
+    <arg name="ir_camera_info_url" default="file://${ROS_HOME}/camera_info/$(arg camera)_ir.yaml" />
+    <arg name="calibrate_rgb" default="false" />
+    <arg name="calibrate_ir" default="false" />
+    <arg name="check_rgb" default="false" />
+    <arg name="check_ir" default="false" />
+
+    <include file="$(find realsense_camera)/launch/realsense_camera.launch">
+        <arg name="camera" value="$(arg camera)" />
+        <arg name="rgb_camera_info_url" value="$(arg rgb_camera_info_url)" />
+        <arg name="ir_camera_info_url" value="$(arg ir_camera_info_url)" />
+    </include>
+
+	<group if="$(arg calibrate_rgb)">
+  		<node name="cameracalibration" pkg="camera_calibration" type="cameracalibrator.py" args="--size 8x6 --square 0.030 --no-service-check" output="screen">
+            <remap from="image" to="$(arg camera)/rgb/image_raw" />
+			<remap from="camera" to="$(arg camera)_rgb" />
+		</node>
+	</group>
+	
+	<group if="$(arg check_rgb)">
+		<node name="cameracheck" pkg="camera_calibration" type="cameracheck.py" args="--size 8x6 --square 0.030" output="screen">
+            <remap from="monocular" to="$(arg camera)/rgb" />
+            <remap from="image" to="$(arg camera)/rgb/image_rect" />
+		</node>
+	</group>
+
+	<group if="$(arg calibrate_ir)">
+  		<node name="cameracalibration" pkg="camera_calibration" type="cameracalibrator.py" args="--size 8x6 --square 0.030 --no-service-check" output="screen">
+            <remap from="image" to="$(arg camera)/ir/image_raw" />
+			<remap from="camera" to="$(arg camera)_ir" />
+		</node>
+	</group>
+	
+	<group if="$(arg check_ir)">
+		<node name="cameracheck" pkg="camera_calibration" type="cameracheck.py" args="--size 8x6 --square 0.030" output="screen">
+            <remap from="monocular" to="$(arg camera)/ir" />
+            <remap from="image" to="$(arg camera)/ir/image_rect" />
+		</node>
+	</group>
+</launch>

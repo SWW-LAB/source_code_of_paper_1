@@ -1,0 +1,2 @@
+dynamixel_motor/dynamixel_controllers:dynamixel_motor/dynamixel_driver:dynamixel_motor/dynamixel_motor:dynamixel_motor/dynamixel_msgs:dynamixel_motor/dynamixel_tutorials
+-DCATKIN_DEVEL_PREFIX=/home/chao/tools/devel -DCMAKE_INSTALL_PREFIX=/home/chao/tools/install -G Unix Makefiles

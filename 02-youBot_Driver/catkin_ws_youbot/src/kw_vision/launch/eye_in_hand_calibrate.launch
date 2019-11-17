@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="camera" value="realsense_f200" />
+    <arg name="calib_file_dir" value="$(find kw_vision)/data/calib/" /> 
+    <arg name="camera_info_url" value="file://${ROS_HOME}/camera_info/$(arg camera)_rgb.yaml" /> 
+    <arg name="eye_in_hand_static_tf_file_path" value="$(find kw_vision)/data/calib/eye_in_hand_static_tf.launch" />
+    <arg name="base_link" value="arm_link_0" /> <!-- for this is a constant link relate to hand link -->
+    <arg name="hand_link" value="arm_link_5" />
+    <arg name="cam_link" value="$(arg camera)_rgb_optical_frame" />
+    <arg name="cam_root_link" value="$(arg camera)_link" />
+    <arg name="x_corners_num" value="8" />
+    <arg name="y_corners_num" value="6" />
+    <arg name="square_size" value="0.03" />
+
+    <include file="$(find kw_eye_in_hand_calibration)/launch/eye_in_hand_calibrate.launch" >
+        <arg name="calib_file_dir" value="$(arg calib_file_dir)" /> 
+        <arg name="camera" value="$(arg camera)" />
+        <arg name="camera_info_url" value="$(arg camera_info_url)" /> 
+        <arg name="eye_in_hand_static_tf_file_path" value="$(arg eye_in_hand_static_tf_file_path)" />
+        <arg name="base_link" value="$(arg base_link)" />
+        <arg name="hand_link" value="$(arg hand_link)" />
+        <arg name="cam_link" value="$(arg cam_link)" />
+        <arg name="cam_root_link" value="$(arg cam_root_link)" />
+        <arg name="x_corners_num" value="$(arg x_corners_num)" />
+        <arg name="y_corners_num" value="$(arg y_corners_num)" />
+        <arg name="square_size" value="$(arg square_size)" />
+    </include>
+
+</launch>

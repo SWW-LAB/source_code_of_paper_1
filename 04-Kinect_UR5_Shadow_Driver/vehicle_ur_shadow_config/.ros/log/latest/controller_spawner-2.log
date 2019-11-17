@@ -1,0 +1,50 @@
+[rospy.client][INFO] 2017-05-24 21:45:51,968: init_node, name[/controller_spawner], pid[4834]
+[xmlrpc][INFO] 2017-05-24 21:45:51,968: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2017-05-24 21:45:51,968: Started XML-RPC server [http://192.168.1.30:46300/]
+[rospy.init][INFO] 2017-05-24 21:45:51,968: ROS Slave URI: [http://192.168.1.30:46300/]
+[rospy.impl.masterslave][INFO] 2017-05-24 21:45:51,968: _ready: http://192.168.1.30:46300/
+[xmlrpc][INFO] 2017-05-24 21:45:51,968: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2017-05-24 21:45:51,969: Registering with master node http://192.168.1.30:11311
+[rospy.init][INFO] 2017-05-24 21:45:52,068: registered with master
+[rospy.rosout][INFO] 2017-05-24 21:45:52,069: initializing /rosout core topic
+[rospy.rosout][INFO] 2017-05-24 21:45:52,070: connected to core topic /rosout
+[rospy.simtime][INFO] 2017-05-24 21:45:52,071: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2017-05-24 21:45:52,073: Controller Spawner: Waiting for service controller_manager/load_controller
+[rospy.internal][INFO] 2017-05-24 21:45:52,335: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2017-05-24 21:45:52,978: Controller Spawner: Waiting for service controller_manager/switch_controller
+[rosout][INFO] 2017-05-24 21:45:52,979: Controller Spawner: Waiting for service controller_manager/unload_controller
+[rosout][INFO] 2017-05-24 21:45:52,980: Loading controller: bulldog_joint_publisher
+[rosout][INFO] 2017-05-24 21:46:03,024: Loading controller: bulldog_velocity_controller
+[rosout][INFO] 2017-05-24 21:46:03,078: Controller Spawner: Loaded controllers: bulldog_joint_publisher, bulldog_velocity_controller
+[rosout][ERROR] 2017-05-24 21:46:03,099: Failed to start controllers: bulldog_joint_publisher, bulldog_velocity_controller
+[rospy.core][INFO] 2017-05-24 21:48:19,253: signal_shutdown [signal-2]
+[rosout][INFO] 2017-05-24 21:48:19,254: Shutting down spawner. Stopping and unloading controllers...
+[rosout][WARNING] 2017-05-24 21:48:21,461: Controller Spawner couldn't reach controller_manager to take down controllers. Waited for 1 second(s).
+[rospy.internal][INFO] 2017-05-24 21:48:21,463: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2017-05-24 21:48:21,463: signal-2
+[rospy.core][INFO] 2017-05-24 21:48:22,077: signal_shutdown [atexit]
+[rospy.client][INFO] 2017-05-24 21:48:27,475: init_node, name[/controller_spawner], pid[5814]
+[xmlrpc][INFO] 2017-05-24 21:48:27,475: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2017-05-24 21:48:27,476: Started XML-RPC server [http://192.168.1.30:46552/]
+[rospy.init][INFO] 2017-05-24 21:48:27,476: ROS Slave URI: [http://192.168.1.30:46552/]
+[rospy.impl.masterslave][INFO] 2017-05-24 21:48:27,476: _ready: http://192.168.1.30:46552/
+[xmlrpc][INFO] 2017-05-24 21:48:27,476: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2017-05-24 21:48:27,476: Registering with master node http://192.168.1.30:11311
+[rospy.init][INFO] 2017-05-24 21:48:27,576: registered with master
+[rospy.rosout][INFO] 2017-05-24 21:48:27,576: initializing /rosout core topic
+[rospy.rosout][INFO] 2017-05-24 21:48:27,578: connected to core topic /rosout
+[rospy.simtime][INFO] 2017-05-24 21:48:27,579: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2017-05-24 21:48:27,581: Controller Spawner: Waiting for service controller_manager/load_controller
+[rospy.internal][INFO] 2017-05-24 21:48:27,817: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2017-05-24 21:48:28,486: Controller Spawner: Waiting for service controller_manager/switch_controller
+[rosout][INFO] 2017-05-24 21:48:28,487: Controller Spawner: Waiting for service controller_manager/unload_controller
+[rosout][INFO] 2017-05-24 21:48:28,488: Loading controller: bulldog_joint_publisher
+[rosout][INFO] 2017-05-24 21:48:28,525: Loading controller: bulldog_velocity_controller
+[rosout][INFO] 2017-05-24 21:48:28,588: Controller Spawner: Loaded controllers: bulldog_joint_publisher, bulldog_velocity_controller
+[rosout][INFO] 2017-05-24 21:48:28,612: Started controllers: bulldog_joint_publisher, bulldog_velocity_controller
+[rospy.core][INFO] 2017-05-24 21:52:25,596: signal_shutdown [signal-2]
+[rosout][INFO] 2017-05-24 21:52:25,596: Shutting down spawner. Stopping and unloading controllers...
+[rosout][WARNING] 2017-05-24 21:52:27,803: Controller Spawner couldn't reach controller_manager to take down controllers. Waited for 1 second(s).
+[rospy.internal][INFO] 2017-05-24 21:52:27,805: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2017-05-24 21:52:27,805: signal-2
+[rospy.core][INFO] 2017-05-24 21:52:27,937: signal_shutdown [atexit]

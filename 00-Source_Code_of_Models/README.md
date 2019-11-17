@@ -1,0 +1,1 @@
+The dataset is randomly divided into three parts, of which 80% is used for training, 10% is used for validation, and 10% is used for testing.

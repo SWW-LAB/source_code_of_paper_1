@@ -1,0 +1,16 @@
+<package>
+  <name>brics_actuator</name>
+  <description>Message defined in the BRICS project</description>
+  <author>Alexander Bubeck</author>
+  <maintainer email="x@x.de">x</maintainer>
+  <license>BSD</license>
+  <version>0.1.0</version>
+  <url>https://github.com/youbot</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>geometry_msgs</build_depend>
+
+</package>
+
+

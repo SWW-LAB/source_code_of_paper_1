@@ -1,0 +1,8 @@
+prefix=/home/chao/catkin_ws_action/devel
+
+Name: CBT
+Description: Description of CBT
+Version: 0.0.0
+Cflags: -I/home/chao/catkin_ws_action/src/CBT/include
+Libs: -L/home/chao/catkin_ws_action/devel/lib -lCBT
+Requires: actionlib actionlib_msgs geometry_msgs roscpp rospy sensor_msgs ik

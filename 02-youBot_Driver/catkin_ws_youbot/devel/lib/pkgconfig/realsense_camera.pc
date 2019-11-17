@@ -1,0 +1,8 @@
+prefix=/home/chao/catkin_ws_youbot/devel
+
+Name: realsense_camera
+Description: Description of realsense_camera
+Version: 0.0.1
+Cflags: -I/home/chao/catkin_ws_youbot/devel/include
+Libs: -L/home/chao/catkin_ws_youbot/devel/lib 
+Requires: message_runtime std_msgs

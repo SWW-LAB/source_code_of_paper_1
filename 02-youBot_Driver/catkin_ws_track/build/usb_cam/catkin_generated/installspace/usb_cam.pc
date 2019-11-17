@@ -1,0 +1,8 @@
+prefix=/home/chao/catkin_ws_track/install
+
+Name: usb_cam
+Description: Description of usb_cam
+Version: 0.3.4
+Cflags: -I/home/chao/catkin_ws_track/install/include
+Libs: -L/home/chao/catkin_ws_track/install/lib -lusb_cam
+Requires: 

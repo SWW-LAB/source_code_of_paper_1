@@ -1,0 +1,8 @@
+prefix=/home/chao/catkin_ws_youbot/install
+
+Name: joy
+Description: Description of joy
+Version: 1.10.1
+Cflags: 
+Libs: -L/home/chao/catkin_ws_youbot/install/lib 
+Requires: roscpp diagnostic_updater sensor_msgs

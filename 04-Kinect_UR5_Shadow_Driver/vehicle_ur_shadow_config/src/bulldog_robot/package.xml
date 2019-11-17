@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>bulldog_robot</name>
+  <version>2.0.0</version>
+  <description>Metapackage for bulldog robot software</description>
+
+  <author email="956473807@qq.com">Shawn Ma</author>
+  <maintainer email="956473807@qq.com">Shawn Ma</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/bulldog</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>bulldog_driver</run_depend>
+  <run_depend>bulldog_description</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

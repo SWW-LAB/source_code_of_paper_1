@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <arg name="camera" value="realsense_f200" /> 
+    <arg name="rgb_camera_info_url" default="file://${ROS_HOME}/camera_info/$(arg camera)_rgb.yaml" />
+    <arg name="ir_camera_info_url" default="file://${ROS_HOME}/camera_info/$(arg camera)_ir.yaml" />
+    <arg name="eye_in_hand_static_tf_file_path" value="$(find kw_vision)/data/calib/eye_in_hand_static_tf.launch" />
+
+    <include file="$(find realsense_camera)/launch/realsense_camera.launch">
+        <arg name="camera" value="$(arg camera)" />
+        <arg name="rgb_camera_info_url" value="$(arg rgb_camera_info_url)" />
+        <arg name="ir_camera_info_url" value="$(arg ir_camera_info_url)" />
+    </include>
+
+    <include file="$(arg eye_in_hand_static_tf_file_path)" />
+
+</launch>
