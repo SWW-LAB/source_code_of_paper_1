@@ -1,3 +1,0 @@
-- git:
-    local-name: dynamixel_motor
-    uri: git://github.com/arebgun/dynamixel_motor.git

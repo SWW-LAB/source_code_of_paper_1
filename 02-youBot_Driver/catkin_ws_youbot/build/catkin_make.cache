@@ -1,2 +1,0 @@
-brics_actuator:joy:kw_joy_control:kw_vision:realsense_camera:youbot_description:youbot_driver:youbot_driver_ros_interface
--DCATKIN_DEVEL_PREFIX=/home/chao/catkin_ws_youbot/devel -DCMAKE_INSTALL_PREFIX=/home/chao/catkin_ws_youbot/install -G Unix Makefiles

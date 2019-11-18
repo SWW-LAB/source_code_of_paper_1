@@ -1,8 +1,0 @@
-prefix=/home/chao/tools/install
-
-Name: dynamixel_tutorials
-Description: Description of dynamixel_tutorials
-Version: 0.4.0
-Cflags: 
-Libs: -L/home/chao/tools/install/lib 
-Requires: dynamixel_controllers

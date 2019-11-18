@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/configuration_comparator_test.dir/ros/test/configuration_comparator_test.cpp.o  -o /home/chao/catkin_ws_action/devel/lib/youbot_arm_kinematics_moveit/configuration_comparator_test  -L/home/chao/catkin_ws_action/build/gtest -rdynamic ../../gtest/libgtest.so -lpthread -Wl,-rpath,/home/chao/catkin_ws_action/build/gtest 

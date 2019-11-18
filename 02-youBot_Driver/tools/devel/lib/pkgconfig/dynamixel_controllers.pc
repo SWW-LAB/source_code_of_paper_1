@@ -1,8 +1,0 @@
-prefix=/home/chao/tools/devel
-
-Name: dynamixel_controllers
-Description: Description of dynamixel_controllers
-Version: 0.4.0
-Cflags: -I/home/chao/tools/devel/include
-Libs: -L/home/chao/tools/devel/lib 
-Requires: rospy actionlib dynamixel_driver std_msgs trajectory_msgs diagnostic_msgs dynamixel_msgs control_msgs

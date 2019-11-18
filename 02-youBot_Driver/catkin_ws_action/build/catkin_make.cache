@@ -1,2 +1,0 @@
-CBT:arm_trajectory:dynamixel_tutorials:gripper_controller:ik:ik_config:youbot_action:youbot_description:youbot_manpulation/youbot_arm_kinematics:youbot_manpulation/youbot_arm_kinematics_moveit:youbot_manpulation/youbot_manipulation:youbot_manpulation/youbot_moveit:youbot_moveit_config
--DCATKIN_DEVEL_PREFIX=/home/chao/catkin_ws_action/devel -DCMAKE_INSTALL_PREFIX=/home/chao/catkin_ws_action/install -G Unix Makefiles

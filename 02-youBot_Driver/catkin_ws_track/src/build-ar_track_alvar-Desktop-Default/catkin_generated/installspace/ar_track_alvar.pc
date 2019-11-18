@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: ar_track_alvar
-Description: Description of ar_track_alvar
-Version: 0.5.3
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib -lar_track_alvar
-Requires: ar_track_alvar_msgs std_msgs roscpp tf tf2 message_runtime image_transport sensor_msgs geometry_msgs visualization_msgs resource_retriever cv_bridge pcl_ros pcl_conversions dynamic_reconfigure

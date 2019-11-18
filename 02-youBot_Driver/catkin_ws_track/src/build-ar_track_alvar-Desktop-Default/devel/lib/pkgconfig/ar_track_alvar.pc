@@ -1,8 +1,0 @@
-prefix=/home/dushuang/catkin_ws_track/src/build-ar_track_alvar-Desktop-Default/devel
-
-Name: ar_track_alvar
-Description: Description of ar_track_alvar
-Version: 0.5.3
-Cflags: -I/home/dushuang/catkin_ws_track/src/build-ar_track_alvar-Desktop-Default/devel/include -I/home/dushuang/catkin_ws_track/src/ar_track_alvar/include
-Libs: -L/home/dushuang/catkin_ws_track/src/build-ar_track_alvar-Desktop-Default/devel/lib -lar_track_alvar
-Requires: ar_track_alvar_msgs std_msgs roscpp tf tf2 message_runtime image_transport sensor_msgs geometry_msgs visualization_msgs resource_retriever cv_bridge pcl_ros pcl_conversions dynamic_reconfigure

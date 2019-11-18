@@ -1,8 +1,0 @@
-prefix=/home/chao/tools/devel
-
-Name: dynamixel_msgs
-Description: Description of dynamixel_msgs
-Version: 0.4.0
-Cflags: -I/home/chao/tools/devel/include
-Libs: -L/home/chao/tools/devel/lib 
-Requires: message_runtime std_msgs

@@ -1,2 +1,0 @@
-set(ik_MESSAGE_FILES "/home/chao/catkin_ws_action/src/ik/msg/ik.msg;/home/chao/catkin_ws_action/devel/share/ik/msg/ikAction.msg;/home/chao/catkin_ws_action/devel/share/ik/msg/ikActionGoal.msg;/home/chao/catkin_ws_action/devel/share/ik/msg/ikActionResult.msg;/home/chao/catkin_ws_action/devel/share/ik/msg/ikActionFeedback.msg;/home/chao/catkin_ws_action/devel/share/ik/msg/ikGoal.msg;/home/chao/catkin_ws_action/devel/share/ik/msg/ikResult.msg;/home/chao/catkin_ws_action/devel/share/ik/msg/ikFeedback.msg")
-set(ik_SERVICE_FILES "/home/chao/catkin_ws_action/src/ik/srv/ik_.srv")

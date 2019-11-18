@@ -1,8 +1,0 @@
-prefix=/home/chao/catkin_ws_track/devel
-
-Name: ar_track_alvar_msgs
-Description: Description of ar_track_alvar_msgs
-Version: 0.5.1
-Cflags: -I/home/chao/catkin_ws_track/devel/include
-Libs: -L/home/chao/catkin_ws_track/devel/lib 
-Requires: message_runtime std_msgs geometry_msgs

@@ -1,8 +1,0 @@
-prefix=/home/chao/catkin_ws_youbot/install
-
-Name: youbot_description
-Description: Description of youbot_description
-Version: 0.8.0
-Cflags: 
-Libs: -L/home/chao/catkin_ws_youbot/install/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/chao/catkin_ws_action/install
-
-Name: gripper_controller
-Description: Description of gripper_controller
-Version: 0.0.0
-Cflags: -I/home/chao/catkin_ws_action/install/include
-Libs: -L/home/chao/catkin_ws_action/install/lib -lgripper_controller
-Requires: actionlib_msgs actionlib dynamixel_controllers dynamixel_msgs dynamixel_tutorials roscpp rospy std_msgs

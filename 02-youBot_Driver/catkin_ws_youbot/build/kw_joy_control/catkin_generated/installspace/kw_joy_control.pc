@@ -1,8 +1,0 @@
-prefix=/home/chao/catkin_ws_youbot/install
-
-Name: kw_joy_control
-Description: Description of kw_joy_control
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/chao/catkin_ws_youbot/install/lib 
-Requires: 
