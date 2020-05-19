@@ -1,35 +1,33 @@
 function net = cnn_train_1(net, x, y,test_x, test_y,verif_x,verif_y)  
-    m = size(x, 4); % m ±£´æµÄÊÇ ÑµÁ·Ñù±¾¸öÊı  
+    m = size(x, 4);
     numbatches = m / net.Parameter.num;  
-   % rem: Remainder after division. rem(x,y) is x - n.*y Ïàµ±ÓÚÇóÓà  
-   % rem(numbatches, 1) ¾ÍÏàµ±ÓÚÈ¡ÆäĞ¡Êı²¿·Ö£¬Èç¹ûÎª0£¬¾ÍÊÇÕûÊı  
+
     if rem(numbatches, 1) ~= 0  
         error('numbatches not integer');  
     end  
       
-    net.rL = [];  %´æ´¢Æ½»¬ºóµÄ´ú¼Ûº¯Êı
-    net.tra_r = [];  %´æ´¢ÑµÁ·¼¯loss
-    net.test_r = []; %´æ´¢²âÊÔ¼¯loss
-    net.verif_r = []; %´æ´¢ÑéÖ¤¼¯loss
+    net.rL = [];
+    net.tra_r = [];
+    net.test_r = [];
+    net.verif_r = [];
     
     for i = 1 : net.Parameter.train_num  
-        % disp(X) ´òÓ¡Êı×éÔªËØ¡£Èç¹ûXÊÇ¸ö×Ö·û´®£¬ÄÇ¾Í´òÓ¡Õâ¸ö×Ö·û´® ? 
-        disp(['ÒÑ¾­ÑµÁ·´ÎÊı/×î´óÑµÁ·´ÎÊı£º' num2str(i) '/' num2str(net.Parameter.train_num)]);  
-        e0 = cnn_test_1(net, x, y);%²âÊÔ
+        disp(['cnt/totalï¼š' num2str(i) '/' num2str(net.Parameter.train_num)]);  
+        e0 = cnn_test_1(net, x, y);
         if isempty(net.tra_r)  
-            net.tra_r(1) = e0; % ²âÊÔ¼¯loss  
+            net.tra_r(1) = e0;
         else  
             net.tra_r(end + 1) = e0;
         end
-        e1 = cnn_test_1(net, test_x, test_y);%²âÊÔ
+        e1 = cnn_test_1(net, test_x, test_y);
         if isempty(net.test_r)  
-            net.test_r(1) = e1; % ²âÊÔ¼¯loss  
+            net.test_r(1) = e1; 
         else  
             net.test_r(end + 1) = e1;
         end
-        e2 = cnn_test_1(net, verif_x, verif_y);%²âÊÔ
+        e2 = cnn_test_1(net, verif_x, verif_y);
         if isempty(net.verif_r)  
-            net.verif_r(1) = e2; % ÑéÖ¤¼¯loss  
+            net.verif_r(1) = e2;
         else  
             if net.verif_r(end)<= e2
                 net.e_num = net.e_num+1;
@@ -42,29 +40,20 @@ function net = cnn_train_1(net, x, y,test_x, test_y,verif_x,verif_y)
             break;
         end
         
-        % tic ºÍ toc ÊÇÓÃÀ´¼ÆÊ±µÄ£¬¼ÆËãÕâÁ½ÌõÓï¾äÖ®¼äËùºÄµÄÊ±¼ä 
         tic;  
-        % P = randperm(N) ·µ»Ø[1, N]Ö®¼äËùÓĞÕûÊıµÄÒ»¸öËæ»úµÄĞòÁĞ£¬ÀıÈç  
-        % randperm(6) ¿ÉÄÜ»á·µ»Ø [2 4 5 6 1 3]  
-        % ÕâÑù¾ÍÏàµ±ÓÚ°ÑÔ­À´µÄÑù±¾ÅÅÁĞ´òÂÒ£¬ÔÙÌô³öÒ»Ğ©Ñù±¾À´ÑµÁ·  
-        kk = randperm(m);   %ÓÉÓÚÊÇÑµÁ·Ñù±¾ÊÇËæ»úÊäÈë£¬ËùÒÔÃ¿´Î½á¹û¶¼²»Ò»Ñù¡£
+        kk = randperm(m);
         for l = 1 : numbatches  
-           % È¡³ö´òÂÒË³ĞòºóµÄbatchsize¸öÑù±¾ºÍ¶ÔÓ¦µÄ±êÇ©  ? 
             batch_x = x(:, :, :, kk((l - 1) * net.Parameter.num + 1 : l * net.Parameter.num));  
             batch_y = y(:,    kk((l - 1) * net.Parameter.num + 1 : l * net.Parameter.num));  
   
-           % ÔÚµ±Ç°µÄÍøÂçÈ¨ÖµºÍÍøÂçÊäÈëÏÂ¼ÆËãÍøÂçµÄÊä³ö
-            net = cnn_feedforward(net, batch_x);  % Feedforward º¯Êı£¨ÏòÇ°´«²¥£©
-            % µÃµ½ÉÏÃæµÄÍøÂçÊä³öºó£¬Í¨¹ı¶ÔÓ¦µÄÑù±¾±êÇ©ÓÃbpËã·¨À´µÃµ½Îó²î¶ÔÍøÂçÈ¨Öµ  
-            %£¨Ò²¾ÍÊÇÄÇĞ©¾í»ıºËµÄÔªËØ£©µÄµ¼Êı  
-            net = cnn_back_propagation(net, batch_y);  % Backpropagation£¨·´Ïò´«²¥£© 
-            % µÃµ½Îó²î¶ÔÈ¨ÖµµÄµ¼Êıºó£¬¾ÍÍ¨¹ıÈ¨Öµ¸üĞÂ·½·¨È¥¸üĞÂÈ¨Öµ ? 
+            net = cnn_feedforward(net, batch_x);
+            net = cnn_back_propagation(net, batch_y);
             net = cnn_weight_updated(net);  
             
             if isempty(net.rL)  
-                net.rL(1) = net.L; % ´ú¼Ûº¯ÊıÖµ£¬Ò²¾ÍÊÇÎó²îÖµ  
+                net.rL(1) = net.L;
             else
-                net.rL(end + 1) = 0.999 * net.rL(end) + 0.001 * net.L; % ±£´æÀúÊ·µÄÎó²îÖµ£¬ÒÔ±ã»­Í¼·ÖÎö(´ú¼Ûº¯Êı´óĞ¡)
+                net.rL(end + 1) = 0.999 * net.rL(end) + 0.001 * net.L;
             end    
         end  
         toc; 
