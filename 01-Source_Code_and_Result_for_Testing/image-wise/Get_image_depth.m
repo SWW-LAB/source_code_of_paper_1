@@ -1,6 +1,4 @@
 function [ output_image , output_depth ] = Get_image_depth( )
-%UNTITLED2 此处显示有关此函数的摘要
-%   此处显示详细说明
 sub_image =rossubscriber('/realsense_f200/rgb/image_rect_color','sensor_msgs/Image');
 msg_image = receive(sub_image);
 output_image = readImage(msg_image);
