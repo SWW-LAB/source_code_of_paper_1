@@ -1,6 +1,4 @@
 function [ output_img ] = Dig_deep(img, x, y, f_long, f_wide, r)
-%img:图像 x,y框的中心坐标；f_long：框的长，f_wide：宽；r：框的倾斜角度
-%函数功能：在图像上任意画框
 data_x1 = [[],[]];
 sin_r = sin(r);
 cos_r = cos(r);
