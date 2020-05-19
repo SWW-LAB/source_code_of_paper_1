@@ -3,7 +3,6 @@ function net = cnn_weight_updated(net)
         if strcmp(net.conv_layer{l}.type, 'c')  
             for j = 1 : numel(net.conv_layer{l}.a)  
                 for i = 1 : numel(net.conv_layer{l - 1}.a)  
-                    % 普通的权值更新的公式：W_new = W_old - alpha * de/dW（误差对权值导数）  
                     net.conv_layer{l}.k{i}{j} = net.conv_layer{l}.k{i}{j} - net.Parameter.rate * net.conv_layer{l}.dk{i}{j};  
                 end  
             end  
@@ -15,5 +14,4 @@ function net = cnn_weight_updated(net)
         net.full_layer{i}.w = net.full_layer{i}.w - net.Parameter.rate * net.full_layer{i}.dw; 
         net.full_layer{i}.b = net.full_layer{i}.b - net.Parameter.rate * net.full_layer{i}.db;
     end
-end  
-
+end
