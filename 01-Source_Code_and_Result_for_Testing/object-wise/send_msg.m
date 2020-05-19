@@ -1,6 +1,4 @@
 function send_msg( f1,f2,f3,f4)
-%UNTITLED 此处显示有关此函数的摘要
-%   此处显示详细说明
 %{
 pub_msg = rospublisher('/ros_msg','msg_custom/msg_float64');
 pause(2);
